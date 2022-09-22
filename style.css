@@ -1,0 +1,83 @@
+body{
+    background-color: #EAE8FE;
+    width: 1440px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    margin: auto;
+}
+
+.logo img{
+    display:block;
+    margin: auto;
+    width: 386px;
+    height: 164px;
+}
+
+.left_side{
+    background-color: #fff;
+    width: 360px;
+    height: 545px;
+}
+.menu{
+    width:100%
+}
+
+.menu_list{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu_item {
+    width: 94px;
+    height: 130px;
+    box-shadow: 4px 4px 4px #ccc;
+    border-radius: 10px;
+    text-align: center;
+    margin: 12px;
+}
+.menu_item img{
+    width: 36px;
+    height: 65px;
+}
+
+.change{
+    width: 100%;
+    display: flex;
+}
+.deposit{
+    width: 100%;
+    display: flex;
+}
+.select_lists{
+    width: 100%;
+    display: flex;
+}
+
+.select_item img{
+    width: 18px;
+    height: 33px;
+}
+
+.right_side{
+    width : 360px;
+    height: 545px;
+}
+.money{
+    background-color: #fff;
+}
+
+.money_violet{
+    background-color: #EAE8FE;
+}
+
+.achive_item img{
+    width: 18px;
+    height: 33px;
+}
