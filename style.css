@@ -8,8 +8,11 @@ body{
     justify-content: center;
 }
 
+.left_side , .right_side{
+    margin: 0 12px;
+}
 .logo{
-    margin: auto;
+    margin:0 auto 68px;
 }
 
 .logo img{
@@ -25,7 +28,8 @@ body{
     height: 545px;
 }
 .menu{
-    width:100%
+    width:100%;
+    margin: 0 27px;
 }
 
 .menu_list{
@@ -37,7 +41,7 @@ body{
 .menu_item {
     width: 94px;
     height: 130px;
-    box-shadow: 4px 4px 4px #ccc;
+    border: 1px solid #ccc;
     border-radius: 10px;
     text-align: center;
     margin: 12px;
@@ -50,6 +54,23 @@ body{
 .change{
     width: 100%;
     display: flex;
+    margin: 0 27px;
+}
+
+.change_txt{
+    width: 280px;
+    height: 38px;
+    background-color: #EAE8FE;
+    margin-right: 12px;
+}
+.change_btn{
+    width: 94px;
+    height: 33px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+border-radius: 5px;
+border: none;
 }
 .deposit{
     width: 100%;
@@ -71,6 +92,14 @@ body{
 }
 .money{
     background-color: #fff;
+    height: 50px;
+}
+.money_violet{
+    width: 306px;
+    height: 32px;
+    background-color: #EAE8FE;
+    text-align: center;
+    margin: auto;
 }
 
 .achive_item img{
