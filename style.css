@@ -314,13 +314,19 @@ body{
         margin: auto;
         align-items: center;
     }
+
     .logo img{
         width: 60vw;
+        height: 80%;
     }
     .left_side{
+        margin-top: 0;
         margin-bottom: 10px;
     }
     .right_side{
         margin-top: 10px;
+    }
+    .achive{
+        margin-top: 0;
     }
 }
