@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>markup 까지</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <title>벤딩머신 혼자</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="../reset.css">
 </head>
 <body>
         <h1 class='logo'>
@@ -50,16 +50,16 @@
             </div>
                 <div class='left_bottom'>
                     <div class='change'>
-                        <p class='change_txt'>잔액 : <span>1,000원</span></p>
+                        <p class='change_txt'>잔액 : <input type="number" disabled></p>
                         <button class='change_btn btn'>거스름돈 반환</button>
                     </div>
                     <div class='deposit'>
-                        <input class='deposit_input' type="text" placeholder='입금액 입력'>
+                        <input class='deposit_input' type="number" placeholder='입금액 입력'>
                         <button class='deposit_btn btn'>입금</button>
                     </div>
                     <div class='select_lists'>
                         <ul class='select_list'>
-                            <li class='select_item'>
+                            <!-- <li class='select_item'>
                                 <img src="./img/Original_Cola.png" alt="오리지널 콜라">
                                 <p>original cola</p>
                                 <p class='count'>1</p>
@@ -78,7 +78,7 @@
                                 <img src="./img/Violet_Cola.png" alt="바이올렛 콜라">
                                 <p>green cola</p>
                                 <p class='count'>2</p>
-                            </li>
+                            </li> -->
                         </ul>
                         <button class='achive_btn btn'>획득</button>
                     </div>
@@ -86,12 +86,12 @@
         </section>
         <section class='right_side'>
             <div class='money'>
-                <div class='money_violet'>소지금 : <span>25,000원</span></div>
+                <div class='money_violet'>소지금 : <input type="number" disabled></div>
             </div>
             <div class='achive'>
                 <h3 class='achive_txt'>획득한 음료</h3>
                 <ul class='achive_list'>
-                    <li class='achive_item'>
+                    <!-- <li class='achive_item'>
                         <p class='left_item'><img src="./img/Original_Cola.png" alt="오리지날 콜라">original cola</p>
                         <p class='count'>1</p>
                     </li>
@@ -107,13 +107,14 @@
                     <li class='achive_item'>
                         <p class='left_item'> <img src="./img/Violet_Cola.png" alt="바이올렛콜라">green cola</p>
                         <p class='count'>5</p>
-                    </li>
+                    </li> -->
                 </ul>
-                <p class='total'>총 금액 : 9000원</p>
+                <p class='total'>총 금액 : <span></span></p>
             </div>
             
         </section>
     </div>
+    <script src="index.js"></script>
 <script>
 </script>
 </body>
