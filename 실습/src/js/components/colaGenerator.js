@@ -33,22 +33,29 @@ class ColaGenerator {
     }
     colaFactory(data) {
         const docFrag = document.createDocumentFragment()
-        data.forEach((el) => {
+        data.forEach((el) => {// colaFactory가 콜백함수가 될것임
+            // 데이터를 순환하면서 데이터를 자바스크립트 객체로 바꿈 (json내 배열로 받았으므로 foreach문으로 돌릴 수 있음)
+            // foreach 문이 계속 실행되면서 생성하고 붙이는 과정을 반복하므로 비효율적
             const item = document.createElement('li');
             const itemTemplate = `
             <button type="button" class="btn-item" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
                 <img src="src/images/${el.img}" alt="" class="img-item">
                 <strong class="tit-item">${el.name}</strong>
                 <span class="txt-price">${el.cost}원</span>
-            </button>
-            `;
+            </button>`;
             item.innerHTML = itemTemplate;
-            docFrag.appendChild(item);
+            // this.itemList.appendChild(item);   // 만들어진 li를 ul에 붙임 -> 비효율적이므로 다음줄처럼 수정
+            docFrag.appendChild(item);   // 콜라팩토리 함수 최적화
         });
-        this.itemList.appendChild(docFrag)
+        this.itemList.appendChild(docFrag);   // 콜라팩토리 함수 최적화
     }
 }
 
+/* 음 그러니까  document.creageDocumentFragment() 라는 코드를 이용해서 가상의 fragment 라는 공간을 만들어주는건데, 
+
+그렇지 않으면 forEach문이 직접적으로 DOM을 도니까 코드가 무거워?지는데 Fragment 를 이용하면 forEach로 fragment에 append 할 요소를 차곡차곡 쌓아뒀다가 
+
+forEach문 밖에서 한번에 실제 itemList에 docFrag덩어리를 모아서 append 해주는거다~ 그것은 메모리 최적화를 위해! */
 
 export default ColaGenerator;
 
