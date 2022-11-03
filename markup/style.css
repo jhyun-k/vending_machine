@@ -174,7 +174,7 @@ body{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.select_list::-webkit-scrollbar {
+    .select_list::-webkit-scrollbar {
     width: 4px;
   }
   .select_list::-webkit-scrollbar-thumb {
