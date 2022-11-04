@@ -25,6 +25,8 @@ class Vendingmachine {
         stagedItem.dataset.item = target.dataset.item;
     }
 
+    
+
     bindEvents(){
         /* 1. 입금버튼 기능
         - 입금액을 입력하고 입금 버튼을 누르면 소지금 == 소지금 - 입금액, 잔액 == 기존잔액 + 입금액이 됩니다.
@@ -44,7 +46,7 @@ class Vendingmachine {
                 }else{
                     alert('소지금이 부족합니당')
                 }
-                this.inputCostEl.value = null
+                this.inputCostEl.value = null;
             }
         })
         /*
@@ -72,10 +74,19 @@ class Vendingmachine {
          * 만약 data-count 값이 0 이라면 부모 li에 sold-out 클래스를 붙여줍니다.
         */
 
+        /* *
+        이벤트를 부모요소에 이벤트를 걸어주면 자식요소한테 알아서 전파가 되지만 그건 접근성측면에서 안좋다(li에게 이벤트 주고싶으면 ul에만 이벤트 넣어줘도 다 적용되는것이 이벤트위임)
+        이벤트 위임을 사용하게 되면 자식요소들에게 이벤트가 전파가 되는데 이렇게되면 접근성측면에서 안좋다
+         * 그 이유는 스크린 리더가 이벤트를 읽을때 해당요소에 이벤트가 달려있어야 읽는데 이벤트위임을 하게되면
+         * 실제로 그 요소에는 이벤트가 달려있지 않은것이므로 읽지를 않음. */
+
         const btnCola = this.itemList.querySelectorAll('button');
 
         btnCola.forEach((item)=>{
             item.addEventListener('click',(event)=>{
+                /* target 과 currentTarget 차이
+                target : 클릭하고있는 그녀석(image span 등)
+                currentTarget : 이벤트가 발생하는 녀석! 여기서는 button 다 */
                 const targetEl = event.currentTarget;
                 const balanceVal = parseInt(this.balance.textContent.replaceAll(',',''));
                 let isStaged = false; // 이미 선택되었는가?
