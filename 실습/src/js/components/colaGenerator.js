@@ -3,13 +3,14 @@ class ColaGenerator {
         this.itemList = document.querySelector('.list-item')
     }      
 
-    setup(){
-        this.loadData((json)=>{
+    async setup(){//index.js 에서 await 쓰기 위해 asnyc 문법으로 만든것
+        await this.loadData((json)=>{
             this.colaFactory(json)
         })
     }
 
     async loadData(callback){
+        // 옛날방식 
         /* const requestObject = new XMLHttpRequest(); //서버와 통신하기 위해 객체를 생성합니다.
         requestObject.open("GET",`src/js/item.json`) // 요청시작
         requestObject.onreadystatechange = () => {  // readyState 가 변화하면 트리거
@@ -20,7 +21,7 @@ class ColaGenerator {
         }
         requestObject.send(null) */
 
-        //fetch
+        //fetch 요즘방식
 
         const response = await fetch('src/js/item.json');
 
