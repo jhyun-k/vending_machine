@@ -8,6 +8,7 @@ class ColaGenerator {
             this.colaFactory(json)
         })
     }
+    /* loadData라는 함수를 실행해서 나온 결과물은 json데이터, colaFactory의 결과물은  json데이터를 받아서 li를 생성한것,  그 실행을  setup()함수로 하는건데 ()안에 있는 json이라고 이름붙인게 각각의 결과물들...!  */
 
     async loadData(callback){
         // 옛날방식 
@@ -65,4 +66,18 @@ export default ColaGenerator;
 XMLHttpRequest 생성자가 Ajax 통신을 할 때 필요한 인스턴스를 제공해주고 그 인스턴스를 활용해서 통신하는게 Ajax
 
 fetch는 그 후 등장 */
+
+/* 
+state 숫자 의미
+1. UNSENT (숫자 0) : XMLHttpRequest 객체가 생성됨.
+
+ 2. OPENED (숫자 1) : open() 메소드가 성공적으로 실행됨.
+
+ 3. HEADERS_RECEIVED (숫자 2) : 모든 요청에 대한 응답이 도착함.
+
+ 4. LOADING (숫자 3) : 요청한 데이터를 처리 중임.
+
+ 5. DONE (숫자 4) : 요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨. */
+
+
 
