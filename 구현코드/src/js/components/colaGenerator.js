@@ -35,6 +35,8 @@ class ColaGenerator {
 
         if (response.ok) { // http 상태코드가 200 ~ 299일 경우 
             callback(await response.json()); // 응답 본문을 읽으면서 객체형태로 파싱합니다.
+            console.log(callback)
+            console.log(this.loadData)
         } else {
             alert('통신 에러!' + response.status);
         }

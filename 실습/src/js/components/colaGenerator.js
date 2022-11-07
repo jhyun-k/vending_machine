@@ -3,6 +3,12 @@ class ColaGenerator {
         this.itemList = document.querySelector('.list-item')
     }      
 
+    // setup함수가 실행되면 로드데이타 함수가 실행이됨
+    // 쭊쭊 실행하다가 json파일을 가져오고 끝이나는데 끝이나면서 콜백함수를 실행시킨다.
+    // 콜백함수는 인자로 제이슨을 로드데이타의 인자로 전달함
+    // 콜백함수는 콜라팩토리를 실행시킴
+    // 그 뒤 json이 콜라팩토리의 인자로 들어감.
+    // setup함수를 따로만든 이유는 여러번 사용하였을 때의 메서드의 일관성을 위해서이다.
     async setup(){//index.js 에서 await 쓰기 위해 asnyc 문법으로 만든것
         await this.loadData((json)=>{
             this.colaFactory(json)
@@ -12,18 +18,30 @@ class ColaGenerator {
 
     async loadData(callback){
         // 옛날방식 
-        /* const requestObject = new XMLHttpRequest(); //서버와 통신하기 위해 객체를 생성합니다.
-        requestObject.open("GET",`src/js/item.json`) // 요청시작
-        requestObject.onreadystatechange = () => {  // readyState 가 변화하면 트리거
+        // 엑쎄멜 리퀘스트 함수가 실행되면 서버와 통신하기위해 객체가 생성되고 변수에 저장됨.
+
+        /* 
+        const requestObject = new XMLHttpRequest(); //서버와 통신하기 위해 객체를 생성합니다. 
+        requestObject.open("GET",`src/js/item.json`) // 요청시작, 두번째 인자로 서버주소를 요청하여 서버를 오픈
+        requestObject.onreadystatechange = () => {  // readyState 가 변화하면 트리거 요청이 시작되고 요청에 변화가 있을 때 콜백함수를 실행시킴
+
+        // readyState 가 변화되면 트리거
+        // stauts는 클라이언트에서 요청을주면 요청을 처리하는 과정에서 아무런 문제가 없음을 의미한다.
+        // status는 처리하는 과정이 잘 되었습니까? => 200이면 문제없이 잘 되었습니다~
+        // readyState는 처리되는 상태를 의미
+        // readtState는 서버로부터 당신이 서버로부터 요청한 과정이 어떠한 과정에 있습니다~ 라는 말이다.
+        // https://developer.mozilla.org/ko/docs/Web/HTTP/Status
+        // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+
 
             if(requestObject.readyState === 4 && requestObject.status === 200){ // readyState 가 4면 요청이 끝났다는 뜻(처리상태) , status 는 처리과정에서 문제 있는지없는지 알려줌 200은 문제없다는 뜻 
                 callback(JSON.parse(requestObject.responseText))
             }  
         }
-        requestObject.send(null) */
+        requestObject.send(null) 잘받았다~ 따로 더 보낼 데이터는 없으니 null이나 받아라ㅋ */
 
         //fetch 요즘방식
-
+        // 데이터를 받아올때와 데이터를 사용할때 await을 사용합니다.    
         const response = await fetch('src/js/item.json');
 
         if (response.ok){ // http상태코드가 200~299일경우 , 200(문제없음) 이니? 라고 물어보는 것이다
